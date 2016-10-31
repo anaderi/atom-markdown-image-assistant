@@ -75,7 +75,7 @@ module.exports = MarkdownImageAssistant =
         @create_dir assets_path, ()=>
             fs.writeFile path.join(assets_path, img_filename), imgbuffer, 'binary', ()=>
                 console.log "Copied file over to #{assets_path}"
-                editor.insertText "![](#{path.join("assets", img_filename)})"
+                editor.insertText "<img src=\"#{path.join("assets", img_filename)}\">"
 
         return false
 
